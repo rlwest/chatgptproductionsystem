@@ -1,0 +1,109 @@
+# Certainly! Below is the previous example with extensive comments explaining each part of the code:
+
+#```python
+
+class ProductionRule:
+    def __init__(self, condition, action):
+        """
+        Initialize a production rule with a given condition and action.
+
+        Parameters:
+            condition (function): The condition to be checked for rule activation.
+            action (function): The action to be performed when the rule is activated.
+        """
+        self.condition = condition
+        self.action = action
+
+    def is_triggered(self, environment):
+        """
+        Check if the rule is triggered based on the current environment.
+
+        Parameters:
+            environment (dict): The current environment state.
+
+        Returns:
+            bool: True if the rule is triggered, False otherwise.
+        """
+        return self.condition(environment)
+
+    def perform_action(self, environment):
+        """
+        Perform the action associated with the rule.
+
+        Parameters:
+            environment (dict): The current environment state.
+        """
+        self.action(environment)
+
+# Sample conditions and actions
+def condition1(environment):
+    """
+    Sample condition function 1.
+
+    Parameters:
+        environment (dict): The current environment state.
+
+    Returns:
+        bool: True if the condition is met, False otherwise.
+    """
+    return environment.get("state") == "A"
+
+def action1(environment):
+    """
+    Sample action function 1.
+
+    Parameters:
+        environment (dict): The current environment state.
+    """
+    print("Action 1 performed")
+
+def condition2(environment):
+    """
+    Sample condition function 2.
+
+    Parameters:
+        environment (dict): The current environment state.
+
+    Returns:
+        bool: True if the condition is met, False otherwise.
+    """
+    return environment.get("state") == "B"
+
+def action2(environment):
+    """
+    Sample action function 2.
+
+    Parameters:
+        environment (dict): The current environment state.
+    """
+    print("Action 2 performed")
+
+# Sample environment
+environment = {"state": "A"}
+
+# Sample production rules
+rule1 = ProductionRule(condition1, action1)
+rule2 = ProductionRule(condition2, action2)
+
+# List of production rules
+production_rules = [rule1, rule2]
+
+# Run the production system
+def run_production_system(environment, production_rules):
+    """
+    Run the production system, checking and executing triggered production rules.
+
+    Parameters:
+        environment (dict): The current environment state.
+        production_rules (list): List of production rules.
+    """
+    for rule in production_rules:
+        if rule.is_triggered(environment):
+            rule.perform_action(environment)
+            break
+
+# Simulate the production system
+run_production_system(environment, production_rules)
+#```
+
+# I've added detailed comments explaining the purpose and functionality of each function, method, and class in the code to provide a clearer understanding of what each part does.
