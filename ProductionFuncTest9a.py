@@ -124,8 +124,8 @@ while True:
         
         # Iterating through each buffer defined in the production's 'matches' and 'negations'
         for buffer_key in production['matches'].keys():
-            matches = production['matches'].get(buffer_key, {})
-            negations = production['negations'].get(buffer_key, {})
+            matches = production['matches'].get(buffer_key, {}) ## need to explain logic of matching
+            negations = production['negations'].get(buffer_key, {}) ## need to explain negations
             
             if not buffer_match_eval(buffers[buffer_key], matches, negations):
                 is_match_for_all_buffers = False
