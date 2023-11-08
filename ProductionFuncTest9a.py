@@ -102,10 +102,15 @@ productions = [
 ]
 
 buffers = {'buffer1': {'animal': 'cat', 'colour': 'brown'}, 'buffer2': {'test': 'one'}, 'buffer3': {'fruit': 'pear'}}
+## Note - buffers should be re-named working_memory
+decarative_memory = {'animal': {'animal': 'bat', 'colour': 'black'}, 'food': {'fruit': 'pear'}}
+## Note - the name of the chunk never figures in the computation, it is just for bookeeping
+environment = {'animal': {'animal': 'bat', 'colour': 'black'}, 'food': {'fruit': 'pear'}}
 
-memories = {'memory1': {'animal': 'bat', 'colour': 'black'}, 'memory2': {'fruit': 'pear'}}
-
-
+## A WM buffer is a chunk, an item in memory is a chunk, and an objectin the environment is a chunk.
+## Chunks are not moved, they are copied by production actions.
+## If a chunk is copied into DM and the identical chunk already exists, they are merged
+## The name of a chunk does not figure into whether it is identical
 
 ## Production fire loop
 
