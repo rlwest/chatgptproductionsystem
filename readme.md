@@ -1,3 +1,5 @@
+This readme is under development as is the code in this repository
+
 This project is to build a very simple and transparent computational architecture for building cognitive architectures. 
 
 Ideally this project will include cognitive architectures built on this computational architecture
@@ -10,3 +12,5 @@ This project is for:
 
 
 Assumptions of the computational architecture
+
+memory systems are modeled as dictionaries within dictionaries. 
